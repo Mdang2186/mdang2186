@@ -858,3 +858,43 @@ input:focus, textarea:focus {
   background-clip: text;
   color: transparent;
 }
+/* === HERO BACKWORD: fit đúng bề ngang viewport === */
+.hero-word-bg{
+  position:absolute;
+  left:50%; transform:translateX(-50%);   /* canh giữa theo viewport */
+  bottom: 8%;                              /* vị trí: hơi sát cạnh dưới hero */
+  width: 100vw;                            /* chạy trọn bề ngang màn hình */
+  padding-inline: 2rem;                    /* chừa mép trái/phải */
+  text-align:center;
+  white-space: nowrap;                     /* ép một dòng, không xuống hàng */
+
+  font-weight:  1000;
+  line-height: 1;
+  letter-spacing: -0.01em;
+
+  /* TÍNH CỠ CHỮ THEO CHIỀU RỘNG: 
+     9 ký tự của "PORTFOLIO" => chia cho 9, trừ padding 2rem*2
+     clamp để giới hạn min/max cho đẹp */
+  font-size: clamp(6rem, calc((100vw - 4rem) / 9), 28rem);
+
+  /* Hiệu ứng nhìn rõ */
+  color: rgba(255,255,255,0.2);                    /* fill rõ hơn */
+  -webkit-text-stroke: clamp(2px, 0.8vw, 10px) rgba(255,255,255,0.28);
+  text-shadow:
+    0 10px 30px rgba(0,0,0,0.55),
+    0 0 80px rgba(56,132,255,0.18);
+  mix-blend-mode: overlay;
+  z-index: 0;                /* nội dung chính vẫn nằm trên */
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Màn nhỏ: giảm cỡ, đẩy xuống để không che headline */
+@media (max-width: 640px){
+  .hero-word-bg{
+    bottom: 12%;
+    font-size: clamp(3.5rem, calc((100vw - 2rem) / 9), 10rem);
+    -webkit-text-stroke: clamp(1px, 1vw, 6px) rgba(255,255,255,0.24);
+    color: rgba(255,255,255,0.16);
+  }
+}

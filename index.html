@@ -22,6 +22,7 @@
     
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-bg py-6">
+        
         <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center mb-4 md:mb-0">
                 <a href="#hero" class="text-2xl font-bold text-gradient shimmer">ĐỖ CÔNG MINH</a>
@@ -79,30 +80,34 @@
 
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center relative overflow-hidden pt-28 pb-20">
-        <div class="animated-bg">
+       <div class="hero-word-bg" aria-hidden="true">
+  PORTFOLIO
+</div> <div class="animated-bg">
             <div class="circle" style="width: 400px; height: 400px; top: 20%; left: 10%; animation-delay: 0s;"></div>
             <div class="circle" style="width: 300px; height: 300px; top: 60%; right: 15%; animation-delay: 2s;"></div>
             <div class="circle" style="width: 200px; height: 200px; top: 30%; right: 30%; animation-delay: 4s;"></div>
             <div class="circle" style="width: 350px; height: 350px; bottom: 10%; left: 20%; animation-delay: 6s;"></div>
         </div>
-        
+        <!-- Big background word -->
+
         <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-16 md:mb-0 z-10">
                 <p class="text-sky-400 mb-3 tracking-widest font-medium hero-text-animation">
                     <span>H</span><span>E</span><span>L</span><span>L</span><span>O</span><span>&nbsp;</span><span>T</span><span>H</span><span>E</span><span>R</span><span>E</span><span>,</span><span>&nbsp;</span><span>I</span><span>'</span><span>M</span>
                 </p>
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 glitch-effect text-shadow" data-text="ĐỖ CÔNG MINH">ĐỖ CÔNG MINH</h1>
+                <h1 class="text-6xl md:text-7xl font-bold mb-6 glitch-effect text-shadow" data-text="ĐỖ CÔNG MINH">ĐỖ CÔNG MINH</h1>
                 <div class="h-1.5 w-32 bg-gradient mb-8 rounded-full"></div>
-                <h2 class="text-2xl md:text-3xl mb-8 text-gray-200">Creative <span class="text-gradient">Designer</span> & <span class="text-gradient">Developer</span></h2>
+                <h2 class="text-3xl md:text-4xl mb-8 text-gray-200">Creative <span class="text-gradient">Designer</span> & <span class="text-gradient">Developer</span></h2>
 <p class="text-gray-300/90 text-[15px] sm:text-base md:text-[17px] leading-7 md:leading-8
            max-w-[44ch] md:max-w-[52ch] [text-wrap:pretty] md:[text-align:justify]
            mb-5 md:mb-6 lg:mb-7">
-  Là <span class="font-semibold text-white">kỹ sư Công nghệ phần mềm</span>, tôi mong muốn phát triển trong
-  <span class="font-medium text-sky-400/90">lĩnh vực Frontend &amp; UX/UI</span>, bắt đầu từ
-  <span class="font-medium text-sky-300">vị trí thực tập</span> để vận dụng
-  <span class="text-sky-300">kiến thức lập trình</span> và <span class="text-sky-300">kỹ năng thiết kế giao diện</span>.
-  Sẵn sàng học hỏi và đóng góp vào các dự án thực tế.
+  I am a <span class="font-semibold text-white">Software Engineering graduate</span> seeking to grow in
+  <span class="font-medium text-sky-400/90">Frontend &amp; UX/UI</span>, starting from an
+  <span class="font-medium text-sky-300">internship role</span> to apply my
+  <span class="text-sky-300">programming knowledge</span> and <span class="text-sky-300">interface design skills</span>.
+  I am eager to learn and contribute to real-world projects.
 </p>
+
 
                 <div class="flex flex-wrap gap-4">
                     <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-medium transition transform hover:scale-105 hover-glow btn-hover-effect">Let's Talk</a>
@@ -139,9 +144,9 @@
                         </svg>
                         <div class="absolute inset-0 flex items-center justify-center text-white text-5xl font-bold">
                              <img
-    src="assets/images/minh-flower.png"
+    src="assets/images/avatar1.png"
     alt="Đỗ Công Minh"
-    class="absolute inset-0 w-full h-full object-cover object-[50%_35%]"
+    class="absolute inset-0 w-full h-full object-cover object-[70%_35%]"
     loading="eager"
   />
                         </div>
@@ -492,6 +497,7 @@
 
     <!-- Skills Section -->
     <section id="skills" class="py-20 relative overflow-hidden">
+        
         <div class="container mx-auto px-4 md:px-8">
             <div class="text-center mb-16">
                 <p class="text-sky-400 tracking-widest mb-2">MY EXPERTISE</p>
@@ -941,7 +947,7 @@
       <div id="cvFallback" class="hidden h-full w-full flex items-center justify-center text-center p-6">
         <div>
           <p class="mb-4 text-gray-700">Trình duyệt của bạn không hỗ trợ xem PDF trong trang.</p>
-          <a href="assets/cv/DoCongMinh.pdf" target="_blank" rel="noopener"
+          <a href="assets/cv/CV_DoCongMinh.pdf" target="_blank" rel="noopener"
              class="inline-flex items-center px-5 py-3 rounded-full btn-primary">
             Mở CV trong tab mới <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
           </a>
@@ -951,11 +957,11 @@
 
     <!-- footer -->
     <div class="flex items-center justify-between gap-3 px-4 md:px-6 py-3 md:py-4 border-t border-white/10">
-      <p class="text-sm text-gray-300 truncate">MyCV_Đỗ Công Minh</p>
+      <p class="text-sm text-gray-300 truncate">MyCV_DoCongMinh</p>
       <div class="flex items-center gap-2">
-        <a id="cvOpenNew" href="assets/cv/DoCongMinh.pdf" target="_blank" rel="noopener"
+        <a id="cvOpenNew" href="assets/cv/CV_DoCongMinh.pdf" target="_blank" rel="noopener"
            class="hidden sm:inline-flex px-4 py-2 rounded-full btn-outline">Mở tab mới</a>
-        <a id="cvDownload" href="assets/cv/DoCongMinh.pdf" download
+        <a id="cvDownload" href="assets/cv/CV_DoCongMinh.pdf" download
            class="px-4 py-2 rounded-full btn-primary inline-flex items-center">
           <i class="fa-solid fa-download mr-2"></i> Tải xuống
         </a>

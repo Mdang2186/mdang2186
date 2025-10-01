@@ -154,7 +154,7 @@
   });
 })(); 
 (function () {
-  const PDF_URL = 'assets/cv/DoCongMinh.pdf';
+  const PDF_URL = 'assets/cv/CV_DoCongMinh.pdf';
 
   const btnOpen   = document.getElementById('viewCvBtn');
   const modal     = document.getElementById('cvModal');
