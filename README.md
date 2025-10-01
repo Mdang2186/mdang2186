@@ -1,2 +1,2 @@
 # Portfolio
-Giới thiệu mô tả về bản thân
+Giới thiệu về bản thân
