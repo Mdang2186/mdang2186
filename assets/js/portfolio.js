@@ -193,3 +193,58 @@
     fallback.classList.remove('hidden');
   });
 })(); 
+(function () {
+  const btn = document.getElementById('sendViaGmail');
+  if (!btn) return;
+
+  function buildBody(email, message, fileLink) {
+    // Ghép body có chữ ký nhẹ + link file (nếu có)
+    const lines = [
+      `From: ${email}`,
+      ``,
+      message || '',
+      fileLink ? `\n\nAttachment link: ${fileLink}` : ''
+    ].join('\n');
+    return encodeURIComponent(lines);
+  }
+
+  btn.addEventListener('click', function () {
+    const to = 'mdang2186@gmail.com';
+ 
+    const subject = document.getElementById('subject')?.value?.trim() || '';
+    const message = document.getElementById('message')?.value?.trim() || '';
+    const filelnk = document.getElementById('filelink')?.value?.trim() || ''; // nếu bạn có ô “File link (optional)”
+
+    if (!email || !subject || !message) {
+      alert('Vui lòng nhập Email, Tiêu đề và Nội dung trước khi gửi bằng Gmail.');
+      return;
+    }
+
+    const su = encodeURIComponent(subject);
+    const bd = buildBody(email, message, filelnk);
+
+    // URL Gmail compose (web). Nếu chưa đăng nhập, Gmail sẽ yêu cầu đăng nhập trước
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${to}&su=${su}&body=${bd}`;
+
+    // Fallback mailto cho ứng dụng mail cài trên máy (Outlook, Apple Mail…)
+    const mailtoUrl = `mailto:${to}?subject=${su}&body=${bd}`;
+
+    // Cố gắng mở Gmail trước
+    const w = window.open(gmailUrl, '_blank');
+    // Nếu bị chặn mở tab mới, fallback qua mailto
+    if (!w) location.href = mailtoUrl;
+  });
+})();
+  // Hiện thông báo nếu URL có ?sent=1
+  if (location.hash.includes('contact') && location.search.includes('sent=1')) {
+    document.getElementById('contactNotice')?.classList.remove('hidden');
+    history.replaceState({}, document.title, location.pathname + '#contact'); // làm sạch URL
+  }
+
+  // Tăng tỷ lệ reply đúng người gửi
+  document.getElementById('contactForm')?.addEventListener('submit', function () {
+    const email = document.getElementById('email')?.value || '';
+    let h = this.querySelector('input[name="replyto"]');
+    if (!h) { h = document.createElement('input'); h.type='hidden'; h.name='replyto'; this.appendChild(h); }
+    h.value = email;
+  });

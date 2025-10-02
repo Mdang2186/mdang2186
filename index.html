@@ -247,9 +247,9 @@
                             <div class="card-3d-content relative w-full h-full">
                                 <div class="absolute inset-0 bg-gradient opacity-10"></div>
                                 <!-- Cột trái: Ảnh -->
-<div class="w-full h-[360px] sm:h-[420px] lg:h-[520px] rounded-2xl overflow-hidden border-gradient hover-scale hover-glow">
+<div class="w-full h-[460px] sm:h-[520px] lg:h-[620px] rounded-2xl overflow-hidden border-gradient hover-scale hover-glow">
   <img
-    src="assets/images/minh-hoanghon.png"
+    src="assets/images/minh_sitonflower.png"
     alt="Đỗ Công Minh"
     class="block w-full h-full object-cover object-center"
     loading="lazy"
@@ -866,34 +866,53 @@
                         
                         <div class="md:col-span-3 p-8 md:p-12">
                             <h3 class="text-2xl font-semibold mb-6">Send Message</h3>
-                            <form id="contactForm" class="space-y-6">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label for="name" class="block text-gray-300 mb-2">Name</label>
-                                        <input type="text" id="name" class="w-full px-4 py-3 rounded-lg focus:outline-none hover-glow" required>
-                                    </div>
-                                    <div>
-                                        <label for="email" class="block text-gray-300 mb-2">Email</label>
-                                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg focus:outline-none hover-glow" required>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label for="subject" class="block text-gray-300 mb-2">Subject</label>
-                                    <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg focus:outline-none hover-glow" required>
-                                </div>
-                                <div>
-                                    <label for="message" class="block text-gray-300 mb-2">Message</label>
-                                    <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg focus:outline-none hover-glow" required></textarea>
-                                </div>
-                                <div>
-                                    <button type="submit" class="w-full bg-gradient py-4 rounded-lg font-medium hover:opacity-90 transition transform hover:scale-[1.01] hover-glow">
-                                        Send Message <i class="fas fa-paper-plane ml-2"></i>
-                                    </button>
-                                </div>
-                            </form>
-                            <div id="formSuccess" class="hidden mt-4 p-4 bg-green-900/30 text-green-400 rounded-lg">
-                                Thank you for your message! I'll get back to you soon.
-                            </div>
+                            <form action="https://api.web3forms.com/submit"
+      method="POST"
+      id="contactForm"
+      class="space-y-6">
+
+  <!-- Web3Forms config -->
+  <input type="hidden" name="access_key" value="245e2c4f-4336-4001-8ce3-daabbdc53e0a">
+  <input type="hidden" name="from_name" value="Đỗ Công Minh — Portfolio">
+  <input type="hidden" name="redirect" value="./#contact?sent=1">
+  <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+  <div>
+    <label for="email" class="block text-gray-300 mb-2">Your Email</label>
+    <input id="email" name="email" type="email" required
+           class="w-full px-4 py-3 rounded-lg focus:outline-none hover-glow"
+           placeholder="your@email.com">
+  </div>
+
+  <div>
+    <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+    <input id="subject" name="subject" type="text" required
+           class="w-full px-4 py-3 rounded-lg focus:outline-none hover-glow"
+           placeholder="What’s this about?">
+  </div>
+
+  <div>
+    <label for="message" class="block text-gray-300 mb-2">Message</label>
+    <textarea id="message" name="message" rows="6" required
+              class="w-full px-4 py-3 rounded-lg focus:outline-none hover-glow"
+              placeholder="Write your message here..."></textarea>
+  </div>
+ 
+  <button type="submit"
+          class="w-full bg-gradient py-4 rounded-lg font-medium hover:opacity-90 transition transform hover:scale-[1.01] hover-glow">
+    Send Message
+  </button>
+</form>
+<button type="button" id="sendViaGmail"
+  class="w-full border border-white/20 py-3 rounded-lg hover:bg-white/10 mt-2">
+  Gửi bằng Gmail (mở trình soạn thư)
+</button> 
+
+<!-- Thông báo sau khi redirect -->
+<div id="contactNotice" class="mt-4 hidden p-4 rounded-lg bg-green-900/30 text-green-400">
+  Your message was sent. I’ll get back to you soon!
+</div> 
+
                         </div>
                     </div>
                 </div>
